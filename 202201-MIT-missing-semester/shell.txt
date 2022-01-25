@@ -1,0 +1,82 @@
+1. Using the shell
+Environment variable
+	Path, 
+
+divided by space, if you want to include space
+	using "" , '', or \ for escaping
+
+e.g.
+	date
+	echo $PATH
+	which echo    [the path of echo function]
+
+2. Navigating in the shell
+	pwd  [print working directory]
+	ls [all file in current path]
+	ls {path}   [all file in that path]
+	~ [home directory]
+	/ [root directory]
+		absolute path start with /
+	cd -  [back to previous directory]
+	ls --help [help page]
+		flag  no parameter /option need parameter
+		e.g. 
+			ls -l
+				read(r), write(w), excute(x)
+				---(ower of the file)---(the owner groups)---(everyone else)
+				for directory: allow to see what files in that directory; rename, create, move etc.; search that directory, go to that directory
+	mv old_directory new_directory [both move and rename]
+	cp copy_from copy_to [copy and rename]
+	mkdir [create a new directory]
+	rm path [not recursive so cannot remove a directory]
+		there is a way to do recursive delete
+	rm dir [remove directory, only for empty one]	
+	man [for menu, like help, use q to quit]
+		man ls
+	ctrl + l [clear the window and go back to the top]
+
+3. Coonecting programs
+	operatioin < a > b [a is the input, b is the output]
+		echo hello > hello.txt [hello is write into hello.txt, hello.txt will be created]
+	>> append, > overwrite
+		echo hello > hello.txt  [still hello]
+		echo hello >> hello.txt [now hello hello]
+	cat hello.txt [print the content of the file]
+		cat < hello.txt > hello1.txt
+	| [pipe]
+		ls -l | tail -n1 > ls.txt [the output of ls -l is the input of tail -n1 and then write the result to the file]
+
+4. Versatile and powerful tool - root 
+	super user, userID=0, can do everything in the computer
+	sudo [do as su(superuser)] 
+		sudo command
+/sys.sysfs [system files] 
+	kernel
+	#   [run as root user]
+	sudo su [make the shell as the super user], change the current user to root, and $ --> #
+	exit [exit the su]
+	sudo find
+		sudo find -L /sys/class/backlight -maxdepth 2 -name '*brighness*'
+	tee [both to that file and to your screen]
+	echo 500 | sudo tee brightness
+
+xdg-open  [open a file]
+	
+#. Exercises
+1) echo $SHELL [check the shell]
+2) x
+3) touch [change file timestamps]
+4) touch semester [create a file called semester]
+	what is the difference between 'semester' and 'semester.txt'
+	why I can run the first one but not the second one?
+5) use '' to quete special meaning character
+	'#''!'/bin/sh --> #!/bin/sh
+6) x
+7) sh semester
+	what does sh did?
+8) man chmod
+	chmod [change file mod bits]
+	how to use chmod?
+9) 
+10) 
+11)
