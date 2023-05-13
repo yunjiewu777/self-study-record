@@ -1,0 +1,4 @@
+
+marco() {
+	direc=$(pwd)
+}
